@@ -1,13 +1,13 @@
 ---
-- name: Ubuntu-trusty
+- name: Ubuntu
   when: ansible_distribution == 'Ubuntu'
-  include: Ubuntu-trusty.yml
+  include: ubuntu.yml
 
 - name: Fedora
   when: ansible_distribution == 'Fedora'
-  include: Fedora.yml
+  include: fedora.yml
 
-- name: EL (ex-Fedora)
+- name: RedHat (ex-Fedora)
   when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora'
-  include: EL.yml
+  include: redhat.yml
 
