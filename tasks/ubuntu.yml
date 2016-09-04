@@ -24,7 +24,7 @@
     owner: root
     group: root
     mode: 0644
-    state: present
+    state: file
 
 - name: install virtualbox
   apt: name=virtualbox-{{virtualbox_version}}
