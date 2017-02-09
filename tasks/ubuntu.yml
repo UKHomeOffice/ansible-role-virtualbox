@@ -7,24 +7,22 @@
     - libsdl1.2debian
 
 - name : (Ubuntu) add virtualbox apt key
-  apt_key: url="https://www.virtualbox.org/download/oracle_vbox_2016.asc" id='2980AECF'
+  apt_key:
+    url: "{{ apt_virtualbox_repo_key_1 }}"
+    id: "{{ apt_virtualbox_repo_key_1_id }}"
+    state: present
 
 - name : (Ubuntu) add virtualbox apt key
-  apt_key: url="https://www.virtualbox.org/download/oracle_vbox.asc" id='98AB5139'
+  apt_key:
+    url: "{{ apt_virtualbox_repo_key_2 }}"
+    id: "{{ apt_virtualbox_repo_key_2_id }}"
+    state: present
 
 - name: add virtualbox apt repository
   apt_repository:
-    repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+    repo: "{{ apt_virtual_repo }}"
     update_cache: yes
-    mode: "0644"
-
-- name: fix apt file perms
-  file:
-    path: /etc/apt/sources.list.d/download_virtualbox_org_virtualbox_debian.list
-    owner: root
-    group: root
     mode: 0644
-    state: file
 
 - name: install virtualbox
   apt: name=virtualbox-{{virtualbox_version}}
