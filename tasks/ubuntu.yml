@@ -20,7 +20,7 @@
 
 - name: add virtualbox apt repository
   apt_repository:
-    repo: "{{ apt_virtual_repo }}"
+    repo: "{{ apt_virtualbox_repo }}"
     update_cache: yes
     mode: 0644
 
