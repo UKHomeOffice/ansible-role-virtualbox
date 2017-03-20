@@ -1,5 +1,5 @@
 ---
-virtualbox_version : 5.1
+virtualbox_version : 5.1.18
 apt_virtualbox_repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
 apt_virtualbox_repo_key_1: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
 apt_virtualbox_repo_key_2: "https://www.virtualbox.org/download/oracle_vbox.asc"
